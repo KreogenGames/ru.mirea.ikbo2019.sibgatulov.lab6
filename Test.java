@@ -108,9 +108,9 @@ public class Test {
         return mergesortInner(buf1, buf2, 0, array1.length);
     }
 
-    public static Student[] mergesortInner(Student[] buffer1, Student[] buffer2, int startIndex, int endIndex) {
+    public static Student[] mergesortInner(Student[] buf1, Student[] buf2, int startIndex, int endIndex) {
         if (startIndex >= endIndex - 1) {
-            return buffer1;
+            return buf1;
         }
 
         int middle = startIndex + (endIndex - startIndex) / 2;
