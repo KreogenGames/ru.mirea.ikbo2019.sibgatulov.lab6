@@ -103,9 +103,9 @@ public class Test {
     }
 
     public static Student[] mergeSort(Student[] array1) {
-        Student[] buffer1 = Arrays.copyOf(array1, array1.length);
-        Student[] buffer2 = new Student[array1.length];
-        return mergesortInner(buffer1, buffer2, 0, array1.length);
+        Student[] buf1 = Arrays.copyOf(array1, array1.length);
+        Student[] buf2 = new Student[array1.length];
+        return mergesortInner(buf1, buf2, 0, array1.length);
     }
 
     public static Student[] mergesortInner(Student[] buffer1, Student[] buffer2, int startIndex, int endIndex) {
@@ -114,14 +114,14 @@ public class Test {
         }
 
         int middle = startIndex + (endIndex - startIndex) / 2;
-        Student[] sorted1 = mergesortInner(buffer1, buffer2, startIndex, middle);
-        Student[] sorted2 = mergesortInner(buffer1, buffer2, middle, endIndex);
+        Student[] sorted1 = mergesortInner(buf1, buf2, startIndex, middle);
+        Student[] sorted2 = mergesortInner(buf1, buf2, middle, endIndex);
 
         // Слияние
         int index1 = startIndex;
         int index2 = middle;
         int destIndex = startIndex;
-        Student[] result = sorted1 == buffer1 ? buffer2 : buffer1;
+        Student[] result = sorted1 == buf1 ? buf2 : buf1;
         while (index1 < middle && index2 < endIndex) {
             result[destIndex++] = (sorted1[index1].compareTo(sorted2[index2]) < 0) ? sorted1[index1++] : sorted2[index2++];
         }
