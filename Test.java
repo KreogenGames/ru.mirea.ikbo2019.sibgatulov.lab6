@@ -13,8 +13,8 @@ public class Test {
 
     @Before
     public void setUp() {
-        iDNumber = new Student[5];
-        GPASort = new SortingStudentsByGPA[5];
+        iDNumber = new Student[8];
+        GPASort = new SortingStudentsByGPA[8];
         for (int i = 0; i < iDNumber.length; i++) {
             iDNumber[i] = new Student("Student" + i, (int) (Math.random() * 15 + 1), (int) (Math.random() * 200 + 1));
             GPASort[i] = new SortingStudentsByGPA("Student" + i, (int) (Math.random() * 15 + 1), (int) (Math.random() * 200 + 1));
