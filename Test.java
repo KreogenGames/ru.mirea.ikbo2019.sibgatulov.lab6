@@ -8,27 +8,27 @@ import static org.junit.Assert.assertSame;
 
 public class Test {
 
-    private Student[] iDNumber;
+    private Student[] idNumber;
     private SortingStudentsByGPA[] GPASort;
 
     @Before
     public void setUp() {
-        iDNumber = new Student[8];
+        idNumber = new Student[8];
         GPASort = new SortingStudentsByGPA[8];
-        for (int i = 0; i < iDNumber.length; i++) {
-            iDNumber[i] = new Student("Student" + i, (int) (Math.random() * 15 + 1), (int) (Math.random() * 200 + 1));
+        for (int i = 0; i < idNumber.length; i++) {
+            idNumber[i] = new Student("Student" + i, (int) (Math.random() * 15 + 1), (int) (Math.random() * 200 + 1));
             GPASort[i] = new SortingStudentsByGPA("Student" + i, (int) (Math.random() * 15 + 1), (int) (Math.random() * 200 + 1));
         }
     }
 
     @org.junit.Test
     public void insertionSortTest() {
-        Student[] iDNumberTest;
-        iDNumberTest = iDNumber;
-        insertionSort(iDNumber);
-        Arrays.sort(iDNumberTest);
-        for (int i = 0; i < iDNumberTest.length; i++) {
-            assertSame(iDNumberTest[i], iDNumber[i]);
+        Student[] idNumberTest;
+        idNumberTest = idNumber;
+        insertionSort(idNumber);
+        Arrays.sort(idNumberTest);
+        for (int i = 0; i < idNumberTest.length; i++) {
+            assertSame(idNumberTest[i], idNumber[i]);
         }
     }
 
@@ -46,12 +46,12 @@ public class Test {
     //Сортировка слиянием по id
     @org.junit.Test
     public void mergeSortTest() {
-        Student[] iDNumberTest;
-        iDNumberTest = iDNumber;
-        iDNumber = mergeSort(iDNumber);
-        Arrays.sort(iDNumberTest);
-        for (int i = 0; i < iDNumberTest.length; i++) {
-            assertEquals(0, iDNumber[i].compareTo(iDNumberTest[i]));
+        Student[] idNumberTest;
+        idNumberTest = idNumber;
+        idNumber = mergeSort(idNumber);
+        Arrays.sort(idNumberTest);
+        for (int i = 0; i < idNumberTest.length; i++) {
+            assertEquals(0, idNumber[i].compareTo(idNumberTest[i]));
         }
     }
 
